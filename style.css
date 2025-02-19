@@ -1,0 +1,257 @@
+@font-face {
+    font-family: "Edunline";
+    src: url("font/edunline.woff") format("woff");
+  }
+
+body {
+    background-color: #232642;
+    color: white;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 4em;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.25s ease-out 0s;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+/* index stuff */
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    background: #081c29;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+nav .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 90%;
+    background: #081c29;
+    margin: auto;
+}
+
+nav .navbar a {
+    color: #fff;
+    font-size: 27px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav .navbar .menu {
+    display: flex;
+}
+
+.navbar .menu li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+.navbar .menu li a {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+header {
+    margin: auto;
+    background-color: black;
+}
+
+.main-thing {
+    margin: 12px;
+}
+
+.description {
+    padding: 20px;
+    line-height: 2rem;
+}
+
+.header-text {
+    font-size: 100px;
+    font-family: "Edunline", sans-serif;
+    color: limegreen;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgb(55, 52, 88, 0.3);
+    padding: 20px;
+    animation: flicker 5.0s infinite alternate;
+    transition: opacity 0.1s ease;
+    box-shadow: inset 0 0 9px rgba(0, 0, 0, 0.5);
+    letter-spacing: 10px;
+}
+
+.rainbow-text {
+    animation: flicker 5.0s infinite alternate, rainbow 10s linear 0s infinite;
+}
+
+.mini-header {
+    font-size: 50px;
+    color: green;
+}
+
+#about .header-text {
+    animation: flicker 15.0s infinite alternate;
+}
+
+#hobbies .header-text {
+    animation: flicker 13.0s infinite alternate;
+}
+
+#portfolio .header-text {
+    animation: flicker 16.0s infinite alternate;
+}
+
+.selections {
+    flex-direction: column;
+}
+
+.selections button {
+    font-size: 25px;
+    margin: 25px;
+}
+
+#typing-video {
+    z-index: -100;
+    height: 69vh;
+}
+
+footer {
+    font-size: 15px;
+    margin: auto;
+    padding-left: 20px
+}
+
+.icons {
+    filter: opacity(69%) grayscale(25%);
+    transition: filter 0.2s cubic-bezier(0,1.3,0.9,1.5) 0s;
+    transition: transform 0.2s cubic-bezier(0,1.3,0.9,1.5) 0s;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+  
+.icons:hover {
+    filter: opacity(100%) grayscale(0%);
+}
+
+/* hobbies stuff */
+
+.hobby {
+    height: 14vw;
+    margin: 20px;
+    padding: 25px;
+}
+
+.hobby img {
+    width: 250px;
+    margin-right: 25px;
+}
+
+.suppliment {
+    object-fit: cover;
+    margin-left: 20px;
+}
+
+#art {
+    background-color: #180004;
+}
+
+#music {
+    background-color: #102110;
+}
+
+#games {
+    background-color: #0B0A2F;
+}
+
+/* animation */
+@keyframes flicker {
+    
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      
+        opacity: 60%;
+    }
+    
+    20%, 24%, 55% {        
+        opacity: 100%;
+    }    
+}
+
+/* gallery */
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 15px;
+}
+
+.thumbnail {
+    filter: opacity(100%);
+    transition: filter 0.1s ease 0s, transform 0.1s ease 0s;
+    width: auto;
+    height: 240px;
+    object-position: center;
+}
+
+.thumbnail:hover,
+#helper:hover {
+    filter: opacity(80%);
+    transform: translateY(-0.1em);
+}
+
+/* misc stuff */
+
+.d-flex {
+    display: flex;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.undraggable {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+@keyframes rainbow {
+    from {
+        color: #6666ff;
+    }
+    10% {
+        color: #0099ff;
+    }
+    50% {
+        color: #00ff00;
+    }
+    75% {
+        color: #ff3399;
+    }
+    100% {
+        color: #6666ff;
+    }
+}
